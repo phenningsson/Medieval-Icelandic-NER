@@ -1,0 +1,183 @@
+Medieval Icelandic NER - License Information
+
+This repository contains both source code and datasets for Medieval Icelandic Named Entity Recognition. Different components are licensed under different terms.
+
+================================================================================
+CODE LICENSE - GNU General Public License v3.0 (GPL-3.0)
+================================================================================
+
+All source code in this repository (files in the scripts/ directory and any
+Python files) is licensed under the GNU General Public License v3.0.
+
+Copyright (C) 2025 Pontus Henningsson
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+Full GNU GPL-3.0 license text: https://www.gnu.org/licenses/gpl-3.0.html
+
+================================================================================
+DATA LICENSE - Creative Commons Attribution-ShareAlike 4.0 (CC BY-SA 4.0)
+================================================================================
+
+The datasets included in this repository (all files in the data/ directory,
+excluding MIM-GOLD-NER derived data) are licensed under the Creative Commons
+Attribution-ShareAlike 4.0 International License (CC BY-SA 4.0).
+
+Copyright (C) 2025 Pontus Henningsson
+
+To view a copy of this license, visit:
+https://creativecommons.org/licenses/by-sa/4.0/
+
+You are free to:
+- Share — copy and redistribute the material in any medium or format
+- Adapt — remix, transform, and build upon the material for any purpose,
+  even commercially
+
+Under the following terms:
+- Attribution — You must give appropriate credit, provide a link to the
+  license, and indicate if changes were made
+- ShareAlike — If you remix, transform, or build upon the material, you must
+  distribute your contributions under the same license as the original
+
+Full license text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+================================================================================
+GPL-3.0 & CC BY-SA 4.0
+================================================================================
+
+- CODE (GPL-3.0): Ensures that any modifications to the software remain open
+  source and benefit the community.
+
+- DATA (CC BY-SA 4.0): Allows broad reuse while requiring attribution and share-alike terms.
+
+================================================================================
+DATA SOURCES AND ATTRIBUTIONS
+================================================================================
+
+This repository includes data derived from the following sources:
+
+1. Menota Corpus
+   Old Icelandic texts from the Medieval Nordic Text Archive (Menota);
+   texts and their annotated entites were extractred from Menotic XML, processed, and converted, to CoNLL format. 
+   License: CC BY-SA 4.0
+   Source: https://menota.org
+
+   Citation:
+   @misc{menota,
+     author = {Medieval Nordic Text Archive},
+     title = {Welcome page for Menota},
+     url = {https://www.menota.org/EN_forside.xhtml}
+   }
+
+2. Icelandic Parsed Historical Corpus (IcePaHC)
+   Used to augment the existing Menota training data above. 
+   License: CC BY 4.0
+   Source: https://repository.clarin.is/repository/xmlui/handle/20.500.12537/325
+
+   Citation:
+   @misc{20.500.12537/325,
+     title = {Icelandic Parsed Historical Corpus (IcePaHC) 2024.03},
+     author = {Wallenberg, Joel C. and Ingason, Anton Karl and
+               Sigurðsson, Einar Freyr and Rögnvaldsson, Eiríkur},
+     url = {http://hdl.handle.net/20.500.12537/325},
+     note = {CLARIN-IS},
+     copyright = {Creative Commons - Attribution 4.0 International (CC BY 4.0)},
+     year = {2024}
+   }
+
+3. IceBERT (Pre-trained Language Model)
+   Base model used for transfer learning; base model used for normalised NER model, finetuned for diplomatic NER model. 
+   License: CC BY 4.0
+   Source: https://huggingface.co/vesteinn/IceBERT
+
+   Citation:
+   @inproceedings{snaebjarnarson-etal-2022-warm,
+     title = "A Warm Start and a Clean Crawled Corpus - A Recipe for Good Language Models",
+     author = "Snæbjarnarson, Vésteinn and Símonarson, Haukur Barri and
+               Ragnarsson, Pétur Orri and Ingólfsdóttir, Svanhvít Lilja and
+               Jónsson, Haukur and Thorsteinsson, Vilhjalmur and Einarsson, Hafsteinn",
+     booktitle = "Proceedings of the Thirteenth Language Resources and Evaluation Conference",
+     month = jun,
+     year = "2022",
+     address = "Marseille, France",
+     publisher = "European Language Resources Association",
+     url = "https://aclanthology.org/2022.lrec-1.464",
+     pages = "4356--4366"
+   }
+
+================================================================================
+MIM-GOLD-NER (NOT INCLUDED IN THIS REPOSITORY)
+================================================================================
+
+Some experiments in this repository use MIM-GOLD-NER (Modern Icelandic NER dataset) for training data augmentation.
+
+License: Custom restrictive license (non-redistributable)
+Source: https://repository.clarin.is/repository/xmlui/handle/20.500.12537/140
+
+IMPORTANT: MIM-GOLD-NER is NOT included in this repository due to license
+restrictions. Users must obtain it separately from CLARIN.IS and agree to
+their license terms. See MIM_GOLD_NER_INSTRUCTIONS.md for setup instructions.
+
+Citation:
+@misc{20.500.12537/140,
+  title = {MIM-GOLD-NER – named entity recognition corpus (21.09)},
+  author = {Ingólfsdóttir, Svanhvít Lilja and Guðjónsson, Ásmundur Alma
+            and Loftsson, Hrafn},
+  url = {http://hdl.handle.net/20.500.12537/140},
+  note = {CLARIN-IS},
+  copyright = {Icelandic Mim Gold Standard for Named Entity Recognition (NER)},
+  year = {2020}
+}
+
+The following experiment directories contain only README files (no data):
+- data/normalised/normalised_ner_data/norm_menota_ihpc_mim/
+- data/normalised/normalised_ner_data/norm_menota_ihpc_resamp_mim/
+- data/diplomatic/diplomatic_ner_data/dipl_menota_mim/
+- data/diplomatic/diplomatic_ner_data/dipl_menota_ihpc_mim/
+- data/diplomatic/diplomatic_ner_data/dipl_menota_resamp_mim/
+- data/diplomatic/diplomatic_ner_data/dipl_menota_ihpc_resamp_mim/
+
+Users who obtain MIM-GOLD-NER can use the provided scripts to generate these
+experiment datasets locally.
+
+================================================================================
+CITATION
+================================================================================
+
+If you use this code or data in your research, please cite:
+
+@key{comingsoon,
+}
+
+Additionally, please cite the individual data sources listed above that you use.
+
+================================================================================
+DISCLAIMER
+================================================================================
+
+This repository is provided for academic research purposes. The authors make
+no warranties regarding the accuracy or completeness of the data or code.
+
+THE CODE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE AND NONINFRINGEMENT.
+
+THE DATA IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+
+================================================================================
+CONTACT
+================================================================================
+
+For questions or issues, please:
+Open a GitHub issue, or email [phenningsson@me.com].
