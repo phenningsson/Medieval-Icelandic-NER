@@ -2,13 +2,6 @@
 
 Some experiments in this repository use **MIM-GOLD-NER** (Modern Icelandic NER dataset) to complement the Old Icelandic training data. Due to license restrictions, we cannot redistribute MIM-GOLD-NER. Users must obtain it separately and integrate it using our provided scripts. 
 
-## Quick Overview
-
-- **6 out of 12 experiments** work immediately (no MIM-GOLD-NER data needed)
-- **6 experiments** require MIM-GOLD-NER (The datset is free, but needs to be manually downloaded by the user, and, crucially, the user must agree and comply with their license agreement)
-
----
-
 ### Experiments not using MIM-GOLD-NER
 
 **Normalised Old Icelandic:**
@@ -23,7 +16,7 @@ Some experiments in this repository use **MIM-GOLD-NER** (Modern Icelandic NER d
 - `dipl_menota_resamp` - Diplomatic Menota (resampled)
 - `dipl_menota_ihpc_resamp` - Diplomatic Menota + IcePaHC (both resampled)
 
-### Require MIM-GOLD-NER
+### Requires MIM-GOLD-NER
 
 **Normalised Old Icelandic:**
 - `norm_menota_ihpc_mim` - Menota + IcePaHC + MIM-GOLD-NER
@@ -64,12 +57,6 @@ python scripts/prepare_mim_data.py \
     --output-dir external_data/mim_filtered/
 ```
 
-**What this does:**
-- Reads all `.txt` files in the MIM-GOLD-NER directory
-- Keeps only Person and Location entities
-- Converts all other entities to 'O' (outside)
-- Saves filtered files with `_filtered` suffix
-
 ### Step 2: Create MIM datasets
 
 Combine the filtered MIM-GOLD-NER with the Old Icelandic datasets:
@@ -80,19 +67,12 @@ python scripts/add_mim_to_experiments.py \
     --base_dir ner/data/
 ```
 
-**What this does:**
-- Reads the filtered MIM-GOLD-NER training data
-- Combines it with each Old Icelandic base experiment
-- Creates the 6 MIM-enhanced experiment datasets
-- Places them in the correct directories under
-
-
 ## Training with MIM-enhanced experiments
 
 Train models as usual:
 
 ```bash
-# Example: Train with Menota+IcePaHC+MIM (normalized)
+# Example: Train with Menota+IcePaHC+MIM (normalised)
 python ner/training/train_ner.py \
     --train_file ner/data/normalised/normalised_ner_data/menota_ihpc_mim/train.txt \
     --dev_file ner/data/normalised/normalised_ner_data/dev/dev.txt \
@@ -111,25 +91,8 @@ python ner/training/train_ner.py \
 
 ## License Compliance
 
-### MIM-GOLD-NER License Summary
+Be sure to agree and follow the license terms of MIM-GOLD-NER. For full license terms, see the MIM-GOLD-NER page at CLARIN.IS: https://repository.clarin.is/repository/xmlui/handle/20.500.12537/140?show=full.
 
-By using MIM-GOLD-NER, you agree to its license terms:
-
-**You CAN:**
-- Use MIM-GOLD-NER for research purposes
-- Train models on MIM-GOLD-NER
-- Publish results from models trained on MIM-GOLD-NER
-- Use our scripts to combine MIM-GOLD-NER with the Old Icelandic training data
-
-**You CANNOT:**
-- Redistribute MIM-GOLD-NER (original or modified)
-- Share MIM-GOLD-NER with others (they must obtain it themselves)
-- Use MIM-GOLD-NER for commercial purposes without permission
-
-**You MUST:**
-- Cite MIM-GOLD-NER in publications
-- Respect author moral rights
-- Keep MIM-GOLD-NER secure and private (i.e. do not distribute)
 
 ### Citation
 
@@ -145,9 +108,6 @@ When using MIM-GOLD-NER, please cite:
  year = {2020} 
  }
 ```
-
-For full license terms, see the MIM-GOLD-NER page at CLARIN.IS, https://repository.clarin.is/repository/xmlui/handle/20.500.12537/140?show=full.
-
 ---
 
 **License Note:** This repository does not include or redistribute MIM-GOLD-NER. Users must obtain it separately and agree to its license terms. Please respect the great work carried out by the authors of MIM-GOLD-NER, and do follow their license terms. 
