@@ -116,7 +116,7 @@ The base experiments consists of training data derived from Menota (denoted as _
 
 ### MIM-GOLD-NER: Modern Icelandic as Training Data 
 
-To augment our base training data above even further, we include Modern Icelandic NER data from MIM-GOLD-NER, please see the **MIM_GOLD_NER_INSTRUCTIONS.md** file for instructions. Due to license restrictions, we cannot redistribute MIM-GOLD-NER. Users must obtain it separately and integrate it using our provided scripts in order to reproduce some of our training data and thereby results. The modern Icelandic data from MIM-GOLD-NER helps boost the amount of entities the model is trained on, and thus its generalisability and overall performance. The MIM-GOLD-NER experiments takes the base experiments data and combines it with a filtered version of the MIM-GOLD-NER dataset. We do not resample any data from the MIM-GOLD-NER dataset.
+To augment our base training data above even further, we include Modern Icelandic NER data from MIM-GOLD-NER, please see the [MIM_GOLD_NER_INSTRUCTIONS](MIM_GOLD_NER_INSTRUCTIONS.md) file for instructions. Due to license restrictions, we cannot redistribute MIM-GOLD-NER. Users must obtain it separately and integrate it using our provided scripts in order to reproduce some of our training data and thereby results. The modern Icelandic data from MIM-GOLD-NER helps boost the amount of entities the model is trained on, and thus its generalisability and overall performance. The MIM-GOLD-NER experiments takes the base experiments data and combines it with a filtered version of the MIM-GOLD-NER dataset. We do not resample any data from the MIM-GOLD-NER dataset.
 
 ### MIM-GOLD-NER Experiments (6)
 - **Normalised:** `norm_menota_ihpc_mim`, `norm_menota_ihpc_resamp_mim`
