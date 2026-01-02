@@ -81,7 +81,7 @@ This repository includes data derived from the following sources:
    }
 
 2. Icelandic Parsed Historical Corpus (IcePaHC)
-   Used to augment the existing Menota training data above. 
+   Used to augment the existing Menota training data above, data extracted from the PoS-tagged texts. 
    License: CC BY 4.0
    Source: https://repository.clarin.is/repository/xmlui/handle/20.500.12537/325
 
@@ -155,7 +155,7 @@ experiment datasets locally.
 CITATION
 ================================================================================
 
-If you use this code or data in your research, please cite:
+If you want to reference this work in any way, please cite:
 
 @key{comingsoon,
 }
