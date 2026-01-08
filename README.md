@@ -147,7 +147,7 @@ For complete licensing details, attributions, and citations, please see the [LIC
 
 
 ## Acknowledgments
-We are grateful for the great work carried out by the projects below, and for making it possible for us to use their data in order to conduct our academic research and develop NER models for Medieval Icelandic. We thank developers, annotators, scholars, project managers, and anyone else who has contributed to the projects. We are indebted to the open source community, and hope to contribute to it ourselves with our work. 
+We are grateful for the great work carried out by the projects below, and for making it possible for us to use their data in order to conduct our academic research and develop NER models for Medieval Icelandic. We thank developers, annotators, scholars, project managers, and anyone else who has contributed to the projects. We are indebted to the open source community, and hope to contribute to it ourselves with our work. We also express our sincerest gratitude to the two students from Uppsala University who assisted in marking and annotating entities in the two Menota works _Codex Wormianus_ (AM 242 fol) and _Vǫluspá in Hauksbók_ (AM 544 4to). 
 
 - **Menota:** [The Menota project](https://www.menota.org/)
 - **Icelandic Parsed Historical Corpus (IcePaHC):** [Wallenberg et al., 2024](http://hdl.handle.net/20.500.12537/325)
