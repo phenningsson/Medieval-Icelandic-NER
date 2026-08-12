@@ -8,7 +8,7 @@
 This repository contains code and data for the development of BERT-based Named Entity Recognition (NER) models on Medieval Icelandic texts. 
 We view NER as a token classification task, where the model identifies either [Person] or [Location] entities in both normalised and diplomatic transcriptions of Medieval texts written in Old Icelandic. 
 
-To address issues of a general nature relating to NER on historical texts, as well as specific to Old Icelandic in particular, we create and compare 14 different experiment configurations through different training data combinations, model transfer learning and finetuning, as well as entity class balancing and weighting. The development and test sets consist strictly of data derived from Old Icelandic texts (with the majority written between the years 1210 - 1400; one exception is a 18th century copy of Íslendingabók) stored in the Medieval Nordic Text Archive (Menota). The training data, however, consists of various variations (experiments): strictly Old Icelandic texts from Menota; additions of annotated normalised Old Icelandic texts from the Icelandic Parsed Historical Corpus (IcePaHC, see below); resampling of Old Icelandic texts and their annotated entities; modern texts written and annotated in contemporary Icelandic (MIM-GOLD-NER, see below). For more information about our data configurations and augmentations, see our paper linked below. For our best performing models, see our HuggingFace page; normalised NER model is available on [HuggingFace](https://huggingface.co/Riksarkivet/oldbertur-normalised-old-icelandic-ner), and so is the diplomatic NER model [here](https://huggingface.co/Riksarkivet/oldbertur-diplomatic-old-icelandic-ner). 
+To address issues of a general nature relating to NER on historical texts, as well as specific to Old Icelandic in particular, we create and compare 14 different experiment configurations through different training data combinations, model transfer learning and finetuning, as well as entity class balancing and weighting. The development and test sets consist strictly of data derived from Old Icelandic texts (with the majority written between the years 1210 - 1400; one exception is a 18th century copy of Íslendingabók) stored in the Medieval Nordic Text Archive (Menota). The training data, however, consists of various variations (experiments): strictly Old Icelandic texts from Menota; additions of annotated normalised Old Icelandic texts from the Icelandic Parsed Historical Corpus (IcePaHC, see below); resampling of Old Icelandic texts and their annotated entities; modern texts written and annotated in contemporary Icelandic (MIM-GOLD-NER, see below). For more information about our data configurations and augmentations, see our paper [here](https://doi.org/10.63317/36mey5zik2id). For our best performing models, see our HuggingFace page; normalised NER model is available on [HuggingFace](https://huggingface.co/Riksarkivet/oldbertur-normalised-old-icelandic-ner), and so is the diplomatic NER model [here](https://huggingface.co/Riksarkivet/oldbertur-diplomatic-old-icelandic-ner). 
 
 For our best performing NER model on normalised texts, we achieve a **0.926** F1 score.
 For our best performing NER model on diplomatic texts, we achieve a **0.789** F1 score.
@@ -128,15 +128,22 @@ To augment our base training data above even further, we include Modern Icelandi
 If you want to reference this work in any way, please cite:
 
 ```bibtex
-@inproceedings{henningsson2026,
-  title={{OldBERTur}: Named Entity Recognition for Medieval {I}celandic},
-  author={Henningsson, Pontus and Pettersson, Eva and Lenas, Erik},
-  booktitle={{Proceedings of the Fourth Workshop on Language Technologies for Historical and Ancient Languages (LT4HALA) @ LREC-2026}},
-  year={2026},  
-  address = {Palma, Mallorca, Spain},
-  pages = {469–481. European Language Resources Association (ELRA)},
-  publisher = "11 May 2026. European Language Resources Association (ELRA)",
-  url = {http://lrec-conf.org/proceedings/lrec2026/workshops/lt4hala/2026.lt4hala-1.0.pdf}
+@inproceedings{henningsson-etal-2026-oldbertur,
+    title = "{O}ld{BERT}ur: Named Entity Recognition for Medieval {I}celandic",
+    author = "Henningsson, Pontus  and
+      Pettersson, Eva  and
+      Lenas, Erik",
+    editor = "Sprugnoli, Rachele  and
+      Passarotti, Marco",
+    booktitle = "Proceedings of the Fourth Workshop on Language Technologies for Historical and Ancient Languages ({LT}4{HALA} 2026) @ {LREC} 2026",
+    month = may,
+    year = "2026",
+    address = "Palma, Mallorca (Spain)",
+    publisher = "ELRA Language Resources Association (ELRA)",
+    url = "https://aclanthology.org/2026.lt4hala-1.49/",
+    doi = "10.63317/36mey5zik2id",
+    pages = "469--481",
+    abstract = "We present OldBERTur, a Named Entity Recognition (NER) model for Old Icelandic available in two variations, one for normalised texts, and one for diplomatic texts. Using a BERT-based model architecture, we fine-tune an existing BERT language model, and due to training data scarcity, we employ multiple training configurations, including pre-training domain adaptation, sentence-level data resampling, and modern Icelandic data augmentation; achieving a 93 F1 score for normalised texts, and 79 for diplomatic texts. We find that additional training configurations, such as resampling entity-annotated Old Icelandic texts, significantly improve performance in low-resource settings, while the effectiveness of added training configurations diminishes as the available training data increases. Our models can be used to automatically identify and classify person and location names in texts sourced from the rich Icelandic medieval literary tradition. Our models, along with their data and code, are made publicly available to allow for reuse and future research into medieval Scandinavian NLP and beyond."
 }
 ```
 
