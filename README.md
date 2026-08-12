@@ -8,7 +8,7 @@
 This repository contains code and data for the development of BERT-based Named Entity Recognition (NER) models on Medieval Icelandic texts. 
 We view NER as a token classification task, where the model identifies either [Person] or [Location] entities in both normalised and diplomatic transcriptions of Medieval texts written in Old Icelandic. 
 
-To address issues of a general nature relating to NER on historical texts, as well as specific to Old Icelandic in particular, we create and compare 14 different experiment configurations through different training data combinations, model transfer learning and finetuning, as well as entity class balancing and weighting. The development and test sets consist strictly of data derived from Old Icelandic texts (with the majority written between the years 1210 - 1400; one exception is a 18th century copy of Íslendingabók) stored in the Medieval Nordic Text Archive (Menota). The training data, however, consists of various variations (experiments): strictly Old Icelandic texts from Menota; additions of annotated normalised Old Icelandic texts from the Icelandic Parsed Historical Corpus (IcePaHC, see below); resampling of Old Icelandic texts and their annotated entities; modern texts written and annotated in contemporary Icelandic (MIM-GOLD-NER, see below). For more information about our data configurations and augmentations, see our paper *(coming soon)*. For our best performing models, see our HuggingFace page *(coming soon)*. Our best performing normalised NER model is available on [HuggingFace](https://huggingface.co/Riksarkivet/oldbertur-normalised-old-icelandic-ner).
+To address issues of a general nature relating to NER on historical texts, as well as specific to Old Icelandic in particular, we create and compare 14 different experiment configurations through different training data combinations, model transfer learning and finetuning, as well as entity class balancing and weighting. The development and test sets consist strictly of data derived from Old Icelandic texts (with the majority written between the years 1210 - 1400; one exception is a 18th century copy of Íslendingabók) stored in the Medieval Nordic Text Archive (Menota). The training data, however, consists of various variations (experiments): strictly Old Icelandic texts from Menota; additions of annotated normalised Old Icelandic texts from the Icelandic Parsed Historical Corpus (IcePaHC, see below); resampling of Old Icelandic texts and their annotated entities; modern texts written and annotated in contemporary Icelandic (MIM-GOLD-NER, see below). For more information about our data configurations and augmentations, see our paper linked below. For our best performing models, see our HuggingFace page; normalised NER model is available on [HuggingFace](https://huggingface.co/Riksarkivet/oldbertur-normalised-old-icelandic-ner), and so is the diplomatic NER model [here](https://huggingface.co/Riksarkivet/oldbertur-diplomatic-old-icelandic-ner). 
 
 For our best performing NER model on normalised texts, we achieve a **0.926** F1 score.
 For our best performing NER model on diplomatic texts, we achieve a **0.789** F1 score.
@@ -123,19 +123,21 @@ To augment our base training data above even further, we include Modern Icelandi
 - **Diplomatic:** `dipl_menota_mim`, `dipl_menota_ihpc_mim`, `dipl_menota_resamp_mim`, `dipl_menota_ihpc_resamp_mim`
 
 
-## Resources
-
-- **Paper:** [Link to paper] *(coming soon)*
-- **Models:** [HuggingFace Hub] *(coming soon)*
-- **Data:** [Zenodo] *(coming soon)*
-
-
 ## Citation
 
 If you want to reference this work in any way, please cite:
 
 ```bibtex
-@key{commingsoon}
+@inproceedings{henningsson2026,
+  title={{OldBERTur}: Named Entity Recognition for Medieval {I}celandic},
+  author={Henningsson, Pontus and Pettersson, Eva and Lenas, Erik},
+  booktitle={{Proceedings of the Fourth Workshop on Language Technologies for Historical and Ancient Languages (LT4HALA) @ LREC-2026}},
+  year={2026},  
+  address = {Palma, Mallorca, Spain},
+  pages = {469–481. European Language Resources Association (ELRA)},
+  publisher = "11 May 2026. European Language Resources Association (ELRA)",
+  url = {http://lrec-conf.org/proceedings/lrec2026/workshops/lt4hala/2026.lt4hala-1.0.pdf}
+}
 ```
 
 
